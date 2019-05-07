@@ -9,7 +9,7 @@
     </parent>
 
     <name>JOTA : Library</name>
-    <artifactId>jota</artifactId>
+    <artifactId>jota-android-legacy</artifactId>
 
     <dependencies>
         <dependency>
