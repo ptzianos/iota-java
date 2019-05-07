@@ -37,6 +37,15 @@
             <artifactId>jadler-all</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--
+            Using this library and not relying on java.util.Optionals etc allows this library to be used in
+            Android applications which support API < 24
+         -->
+        <dependency>
+            <groupId>net.sourceforge.streamsupport</groupId>
+            <artifactId>streamsupport</artifactId>
+            <version>1.7.0</version>
+        </dependency>
         
         <!-- Testing -->
         <dependency>

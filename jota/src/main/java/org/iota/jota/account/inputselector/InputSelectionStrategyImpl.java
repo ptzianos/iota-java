@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
+import java8.util.stream.Collectors;
 
 import org.iota.jota.account.AccountBalanceCache;
 import org.iota.jota.account.clock.Clock;

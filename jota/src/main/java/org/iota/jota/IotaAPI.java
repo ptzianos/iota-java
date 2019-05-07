@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.LinkedList;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -826,7 +826,7 @@ public class IotaAPI extends IotaAPICore {
      *
      * @param threshold The confirmation threshold between 0 and 100(inclusive). 
      *                  Should be set to 100 for getting balance by counting only confirmed transactions.
-     * @param addresse The addresses where we will find the balance for.
+     * @param address The addresses where we will find the balance for.
      * @return {@link GetBalancesResponse}
      * @throws ArgumentException The the request was considered wrong in any way by the node
      */
@@ -1728,7 +1728,11 @@ public class IotaAPI extends IotaAPICore {
             return Collections.emptyList();
         }
 
-        return Arrays.stream(res.getTrytes()).map(trytes -> new Transaction(trytes, getCurl())).collect(Collectors.toList());
+        LinkedList<Transaction> transactionLinkedList = new LinkedList<>();
+        for (String trytes : res.getTrytes()) {
+            transactionLinkedList.add(new Transaction(trytes, getCurl()));
+        }
+        return transactionLinkedList;
     }
     
     public static class Builder extends ApiBuilder<Builder, IotaAPI> {

@@ -1,6 +1,6 @@
 package org.iota.jota.store;
 
-import java.util.Optional;
+import java8.util.Optional;
 
 public class IotaFileStore extends IotaClientStore {
     

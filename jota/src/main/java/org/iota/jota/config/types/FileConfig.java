@@ -2,7 +2,7 @@ package org.iota.jota.config.types;
 
 import java.io.File;
 import java.util.List;
-import java.util.Optional;
+import java8.util.Optional;
 
 import org.iota.jota.account.AccountStore;
 import org.iota.jota.account.store.AccountFileStore;

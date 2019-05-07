@@ -9,7 +9,7 @@ import static org.iota.jota.utils.Constants.KEY_LENGTH;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
+import java8.util.Optional;
 
 import org.iota.jota.error.ArgumentException;
 import org.iota.jota.model.Bundle;

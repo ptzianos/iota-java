@@ -3,7 +3,10 @@ package org.iota.jota.account;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Stream;
+
+import java8.util.J8Arrays;
+import java8.util.stream.RefStreams;
+import java8.util.stream.Stream;
 
 import org.iota.jota.IotaAPI;
 import org.iota.jota.account.addressgenerator.AddressGeneratorService;
@@ -113,7 +116,9 @@ public class AccountBalanceCache {
     }
     
     public Stream<Entry<Input, DepositRequest>> getStream(){
-        return cachedIndexMap.entrySet().stream();
+        Stream.Builder<Entry<Input, DepositRequest>> streamBuilder = RefStreams.builder();
+        for (Entry<Input, DepositRequest> entry : cachedIndexMap.entrySet()) { streamBuilder.add(entry); }
+        return streamBuilder.build();
     }
 
     public void addBalance(Input input, DepositRequest depositRequest) {
