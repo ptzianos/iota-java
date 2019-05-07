@@ -115,25 +115,6 @@ public class IotaAPITest {
     }
 
     @Test
-    public void shouldGetValuesFromProperties() {
-        Properties properties = new Properties();
-
-        properties.put("iota.node.host", "somewhere_over_the_rainbow");
-        iotaAPI = new IotaAPI.Builder().config(properties).build();
-        assertThat(iotaAPI.getHost(), Is.is("somewhere_over_the_rainbow"));
-
-        properties = new Properties();
-        properties.put("iota.node.port", "15515");
-        iotaAPI = new IotaAPI.Builder().config(properties).build();
-        assertThat(iotaAPI.getPort(), Is.is("15515"));
-
-        properties = new Properties();
-        properties.put("iota.node.protocol", "https");
-        iotaAPI = new IotaAPI.Builder().config(properties).build();
-        assertThat(iotaAPI.getProtocol(), Is.is("https"));
-    }
-
-    @Test
     @Category(IntegrationTest.class)
     public void shouldGetInputs() throws ArgumentException {
         GetBalancesAndFormatResponse res = iotaAPI.getInputs(TEST_SEED1, 2, 0, 10, 0);
